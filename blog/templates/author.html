@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Post List</title>
+        <title>{{author.name}}'s posts</title>
     </head>
     <body>
-        <h1>Posts:</h1>
+        <h1>{{author.name}}</h1>
+        <p>{{author.bio}}</p>
+        <h2>{{author.name}}'s posts:</h2>
         <ul>
             {% for post in posts %}
             <li>
-                <h2><a href="{%url "post" post.id%}">{{post.title}}</a></h2>
+                <h3><a href="{%url "post" post.id%}">{{post.title}}</a></h3>
                 <p>{{post.published_date}}</p>
             </li>
             {% endfor %}
